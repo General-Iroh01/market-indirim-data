@@ -26,15 +26,10 @@ jobs:
         run: npm run scrape
         continue-on-error: true   # bir marka koparsa (site değişikliği vb.) diğerleri yine de yazılsın
 
-      - name: GitHub Pages için yayın klasörüne kopyala
-        run: |
-          mkdir -p docs
-          cp data/discounts.json docs/discounts.json
-
       - name: Değişiklikleri commit'le ve gönder
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/discounts.json docs/discounts.json
+          git add data/discounts.json
           git diff --staged --quiet || git commit -m "Otomatik tarama: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
