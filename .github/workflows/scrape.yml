@@ -20,7 +20,10 @@ jobs:
           cache: 'npm'
 
       - name: Bağımlılıkları kur
-        run: npm ci
+        # npm ci DEĞİL: package-lock.json elle (Node çalıştırılamayan bir
+        # ortamda) güncellendiği için package.json ile birebir senkron değil,
+        # npm ci bu durumda sert hata verir. npm install daha toleranslı.
+        run: npm install
 
       - name: Tüm marketleri tara
         run: npm run scrape
