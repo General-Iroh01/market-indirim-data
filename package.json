@@ -1,0 +1,19 @@
+{
+  "name": "market-indirim-takip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Watsons, Migros, Gratis, A101, BİM, Şok, CarrefourSA ve Macrocenter indirimlerini takip eden, tamamen ücretsiz/yerel çalışan bir sistem.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "scrape": "node src/runner.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^23.0.0"
+  }
+}

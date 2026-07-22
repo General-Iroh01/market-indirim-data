@@ -1,0 +1,6 @@
+node_modules/
+.env
+# data/discounts.json BİLEREK izlenir (git'te tutulur) — GitHub Actions
+# (scrape.yml) her taramadan sonra bunu commit'leyip GitHub Pages üzerinden
+# yayınlıyor, uygulama o linki fetch ediyor. .tmp geçici yazım dosyası hariç.
+data/*.tmp

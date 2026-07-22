@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market İndirim Takip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-mark">
+        <span class="brand-icon">🏷️</span>
+        <div>
+          <h1>Market İndirim Takip</h1>
+          <p class="subtitle">Watsons · Migros · Gratis · A101 · BİM · Şok · CarrefourSA · Macrocenter</p>
+        </div>
+      </div>
+      <button id="refresh-btn" class="btn-primary">
+        <span class="btn-icon">↻</span> Şimdi Tara
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-row" id="stats-row"></section>
+
+    <section class="filters" id="brand-filters">
+      <button class="chip active" data-brand="">Tümü</button>
+    </section>
+
+    <section class="filters" id="category-filters">
+      <button class="chip active" data-category="">Tüm Kategoriler</button>
+    </section>
+
+    <section class="toolbar">
+      <label class="sort-label" for="sort-select">Sırala:</label>
+      <select id="sort-select" class="sort-select">
+        <option value="default">Varsayılan</option>
+        <option value="discount_desc">İndirim: Büyükten Küçüğe</option>
+        <option value="discount_asc">İndirim: Küçükten Büyüğe</option>
+        <option value="price_asc">Fiyat: Düşükten Yükseğe</option>
+        <option value="price_desc">Fiyat: Yüksekten Düşüğe</option>
+      </select>
+    </section>
+
+    <section class="section-block">
+      <h2 class="section-title">
+        <span class="dot dot-active"></span> Şu An Aktif
+      </h2>
+      <div class="grid" id="active-grid"></div>
+      <p class="empty-msg" id="active-empty" hidden>Bu markada aktif indirim bulunamadı.</p>
+    </section>
+
+    <section class="section-block">
+      <h2 class="section-title">
+        <span class="dot dot-upcoming"></span> Yakında Başlayacak
+      </h2>
+      <div class="grid" id="upcoming-grid"></div>
+      <p class="empty-msg" id="upcoming-empty" hidden>Tarihi bilinen, henüz başlamamış bir kampanya yok.</p>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
